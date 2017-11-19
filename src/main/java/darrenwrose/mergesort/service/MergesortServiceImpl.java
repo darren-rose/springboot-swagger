@@ -51,4 +51,9 @@ public class MergesortServiceImpl implements MergesortService {
         throw new IllegalArgumentException("invalid id: " + id);
     }
 
+    @Override
+    public void deleteAll() {
+        results.clear();
+    }
+
 }

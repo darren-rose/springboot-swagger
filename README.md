@@ -6,13 +6,13 @@
 
 ### How do I get set up? ###
 
-### Maven
+### Run via Maven
 
 * `mvn clean test`
 * `mvn clean spring-boot:run`
 
-#### Docker
-* `mvn package`
+#### Run via Docker
+* `mvn clean package`
 * `./docker-build.sh`
 * `./docker-run.sh`
 

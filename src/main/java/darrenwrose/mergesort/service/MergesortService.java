@@ -1,7 +1,6 @@
 package darrenwrose.mergesort.service;
 
 import darrenwrose.mergesort.model.Execution;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,4 +12,6 @@ public interface MergesortService {
     List<Execution> executions();
 
     Execution execution(int id);
+
+    void deleteAll();
 }

@@ -35,9 +35,15 @@ public class MergesortController {
     }
 
     @GetMapping("/mergesort/executions/{id}")
-    public Execution executions(@PathVariable("id") final int id){
+    public Execution execution(@PathVariable("id") final int id){
         LOGGER.info("execution: {}", id);
         return mergesortService.execution(id);
+    }
+
+    @DeleteMapping("/mergesort/executions")
+    public void deleteAll(){
+        LOGGER.info("delete all");
+        mergesortService.deleteAll();
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
