@@ -5,6 +5,7 @@ import darrenwrose.mergesort.service.MergesortService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,19 +23,19 @@ public class MergesortController {
         this.mergesortService = mergesortService;
     }
 
-    @PostMapping(value = {"/mergesort", "/mergesort/executions"})
+    @PostMapping(value = {"/mergesort", "/mergesort/executions"}, consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public Execution mergesort(@RequestBody List<Integer> input){
         LOGGER.info("mergesort: {}", input);
         return mergesortService.mergesort(input);
     }
 
-    @GetMapping("/mergesort/executions")
+    @GetMapping(value = "/mergesort/executions", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Execution> executions(){
         LOGGER.info("executions");
         return mergesortService.executions();
     }
 
-    @GetMapping("/mergesort/executions/{id}")
+    @GetMapping(value = "/mergesort/executions/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Execution execution(@PathVariable("id") final int id){
         LOGGER.info("execution: {}", id);
         return mergesortService.execution(id);
