@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: mergesort
+
+server:
+  port: 8888
