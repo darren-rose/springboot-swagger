@@ -20,7 +20,7 @@
 
 Visit the following to view the api documentation:
 
-`http://localhost:8888/swagger-ui.html`
+[api docs](http://localhost:8888/swagger-ui.html)
 
 ### Testing
 
