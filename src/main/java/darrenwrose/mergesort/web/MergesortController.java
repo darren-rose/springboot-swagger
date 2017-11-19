@@ -26,7 +26,7 @@ public class MergesortController {
     }
 
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "The execution has been created", response = Execution.class),
+            @ApiResponse(code = 201, message = "The execution has been created", response = Execution.class),
             @ApiResponse(code = 400, message = "The request was invalid")
     })
     @ResponseStatus(HttpStatus.CREATED)
@@ -46,6 +46,7 @@ public class MergesortController {
             @ApiResponse(code = 200, message = "The execution", response = Execution.class),
             @ApiResponse(code = 400, message = "The execution id is invalid")
     })
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/mergesort/executions/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Execution execution(@PathVariable("id") final int id){
         LOGGER.info("execution: {}", id);
