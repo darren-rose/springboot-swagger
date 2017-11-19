@@ -23,6 +23,7 @@ public class MergesortController {
         this.mergesortService = mergesortService;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = {"/mergesort", "/mergesort/executions"}, consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public Execution mergesort(@RequestBody List<Integer> input){
         LOGGER.info("mergesort: {}", input);

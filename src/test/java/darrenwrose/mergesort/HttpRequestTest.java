@@ -50,10 +50,11 @@ public class HttpRequestTest {
         expected.setInput(input);
 
         // When
-        Execution actual = restTemplate.postForObject(endpoint, input, Execution.class);
+        ResponseEntity<Execution> responseEntity = restTemplate.postForEntity(endpoint, input, Execution.class);
 
         // Then
-        assertThat(actual, is(expected));
+        assertThat(responseEntity.getStatusCode(), is(HttpStatus.CREATED));
+        assertThat(responseEntity.getBody(), is(expected));
     }
 
     @Test
