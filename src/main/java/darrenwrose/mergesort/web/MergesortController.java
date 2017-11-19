@@ -22,7 +22,7 @@ public class MergesortController {
         this.mergesortService = mergesortService;
     }
 
-    @PostMapping("/mergesort")
+    @PostMapping(value = {"/mergesort", "/mergesort/executions"})
     public Execution mergesort(@RequestBody List<Integer> input){
         LOGGER.info("mergesort: {}", input);
         return mergesortService.mergesort(input);

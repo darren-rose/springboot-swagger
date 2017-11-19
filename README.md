@@ -16,6 +16,12 @@
 * `./docker-build.sh`
 * `./docker-run.sh`
 
+### Rest API
+
+Visit the following to view the api documentation:
+
+`http://localhost:8888/swagger-ui.html`
+
 ### Testing
 
 * `curl -v -XPOST -H 'Content-type: application/json' http://localhost:8888/mergesort/  -d [3,5,1,83,51,99]`
