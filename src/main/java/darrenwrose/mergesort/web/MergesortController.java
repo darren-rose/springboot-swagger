@@ -2,6 +2,8 @@ package darrenwrose.mergesort.web;
 
 import darrenwrose.mergesort.model.Execution;
 import darrenwrose.mergesort.service.MergesortService;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,11 @@ public class MergesortController {
         this.mergesortService = mergesortService;
     }
 
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "The execution has been created", response = Execution.class),
+            @ApiResponse(code = 400, message = "The request was invalid")
+    })
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = {"/mergesort", "/mergesort/executions"}, consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
     public Execution mergesort(@RequestBody List<Integer> input){
         LOGGER.info("mergesort: {}", input);
@@ -35,12 +42,19 @@ public class MergesortController {
         return mergesortService.executions();
     }
 
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "The execution", response = Execution.class),
+            @ApiResponse(code = 400, message = "The execution id is invalid")
+    })
     @GetMapping(value = "/mergesort/executions/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Execution execution(@PathVariable("id") final int id){
         LOGGER.info("execution: {}", id);
         return mergesortService.execution(id);
     }
 
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Delete all executions")
+    })
     @DeleteMapping("/mergesort/executions")
     public void deleteAll(){
         LOGGER.info("delete all");
