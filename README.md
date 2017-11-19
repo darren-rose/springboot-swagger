@@ -18,15 +18,9 @@
 
 ### Rest API
 
-Visit the following to view the api documentation:
+When the application is running, visit the following to view the api docs:
 
 [api docs](http://localhost:8888/swagger-ui.html)
-
-### Testing
-
-* `curl -v -XPOST -H 'Content-type: application/json' http://localhost:8888/mergesort/  -d [3,5,1,83,51,99]`
-* `curl -v http://localhost:8888/mergesort/executions`
-* `curl -v http://localhost:8888/mergesort/executions/1`
 
 ### Who do I talk to? ###
 
