@@ -22,7 +22,3 @@ When the application is running, visit the following to view the api docs:
 
 [api docs](http://localhost:8888/swagger-ui.html)
 
-### Who do I talk to? ###
-
-* Darren Rose
-* darrenwrose@gmail.com
